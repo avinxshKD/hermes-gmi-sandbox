@@ -1,0 +1,18 @@
+[project]
+name = "hermes-gmi-sandbox"
+version = "0.1.0"
+description = "GMI Cloud Sandbox terminal backend for Hermes Agent"
+requires-python = ">=3.11,<3.15"
+dependencies = ["gmi-sandbox-sdk>=1.2.1,<2"]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<10", "ruff>=0.15,<0.18"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]

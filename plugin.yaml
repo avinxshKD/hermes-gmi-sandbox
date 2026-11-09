@@ -1,0 +1,27 @@
+name: gmi-sandbox
+label: GMI Cloud Sandbox
+kind: backend
+version: 0.1.0
+author: avinxshKD
+homepage: https://github.com/avinxshKD/hermes-gmi-sandbox
+description: Run Hermes terminal and file operations in ephemeral GMI Cloud sandboxes.
+requires_hermes: ">=0.23.0"
+requires_env:
+  - name: GMI_SANDBOX_API_KEY
+    description: GMI Compute API key for creating and deleting sandboxes
+    secret: true
+config_schema:
+  template_id:
+    type: str
+    default: ""
+    description: Ready GMI Sandbox template with bash and python3 installed
+  idc_name:
+    type: str
+    default: ""
+    description: IDC name; empty uses your organization's default
+  lifetime_seconds:
+    type: int
+    default: 900
+    description: Sandbox lifetime, renewed before commands; cleanup deletes the sandbox
+provides_tools: []
+provides_hooks: []
